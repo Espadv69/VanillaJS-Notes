@@ -1,7 +1,7 @@
 // DOM elements
 const $noteInput = document.querySelector('.note-input') // input
 const $addNoteButton = document.querySelector('.add-note') // button
-const $noteList = document.querySelector('.note-list') // ul
+const $noteList = document.querySelector('.notes-list') // ul
 
 // Recovery notes from localStorage
 let notes = JSON.parse(localStorage.getItem('notes')) || [] // Initialize notes array
@@ -12,7 +12,15 @@ function renderNotes() {
 
   notes.forEach((note, index) => {
     const $li = document.createElement('li') // Create li element
-    $li.innerHTML = `${note} <button class="delete" onclick="deleteNote(${index})">Delete</button>` // Set li innerHTML
+    $li.textContent = note // Set textContent for the note
+
+    // Create delete button
+    const $deleteButton = document.createElement('button')
+    $deleteButton.textContent = 'Delete' // Button text
+    $deleteButton.classList.add('delete') // Add class for styling
+    $deleteButton.addEventListener('click', () => deleteNote(index)) // Attach event listener
+
+    $li.appendChild($deleteButton) // Append the delete button to li
     $noteList.appendChild($li) // Append li to ul
   })
 }
