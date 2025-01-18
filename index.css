@@ -46,4 +46,66 @@ body {
 .note-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.note-input,
+.add-note {
+  font-family: Cambria;
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  border: none;
+  outline: none;
+}
+
+.add-note {
+  width: 50%;
+  cursor: pointer;
+
+  border: 2px solid lightblue;
+
+  text-transform: uppercase;
+  font-size: 22px;
+  color: currentColor;
+  background: transparent;
+}
+
+.notes-list {
+  margin: 1rem auto;
+  padding: 1rem;
+
+  text-transform: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notes-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+}
+
+.notes-list li button {
+  cursor: pointer;
+
+  padding: .4rem;
+
+  border: 1px solid lightblue;
+  border-radius: .2rem;
+  outline: none;
+
+  color: currentColor;
+  background: transparent;
+
+  transition: all .2s ease;
+}
+
+.notes-list li button:hover {
+  background-color: lightblue;
+  color: royalblue;
 }
