@@ -37,12 +37,15 @@ function addNote() {
   }
 }
 
+// Delete note
 function deleteNote(index) {
   notes.splice(index, 1) // Remove note from notes array
   localStorage.setItem('notes', JSON.stringify(notes)) // Save notes array to localStorage
   renderNotes() // Render notes
 }
 
+// Event listeners
 $addNoteButton.addEventListener('click', addNote) // Add note event listener
 
+// Initial render
 renderNotes() // Render notes on page load
